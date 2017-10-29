@@ -4,15 +4,36 @@
     entity_id: device_tracker.ryan_cell
     to: 'home'
   action:
-    service: notify.Telegram
+    service: notify.telegram_erica
     data:
       message: 'Ryan is now home!'
+
 - alias: Ryan Left Home
   trigger:
     platform: state
     entity_id: device_tracker.ryan_cell
     to: 'not_home'
   action:
-    service: notify.Telegram
+    service: notify.telegram_erica
     data:
       message: 'Ryan left home!'
+
+- alias: Erica home
+  trigger:
+    platform: state
+    entity_id: device_tracker.erica_cell
+    to: 'home'
+  action:
+    service: notify.telegram_ryan
+    data:
+      message: 'Erica is now home!'
+
+- alias: Erica Left Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.erica_cell
+    to: 'not_home'
+  action:
+    service: notify.telegram_ryan
+    data:
+      message: 'Erica left home!'
