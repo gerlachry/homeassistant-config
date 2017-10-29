@@ -24,7 +24,7 @@ config:
 
 http:
   # Secrets are defined in the file secrets.yaml
-  api_password: !secret http_password
+  # api_password: !secret http_password
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   # base_url: example.duckdns.org:8123
 
@@ -84,7 +84,7 @@ telegram_bot:
 
 # Example configuration.yaml entry for the notifier
 notify:
-  - name: Telegram_notfier
+  - name: telegram
     platform: telegram
     chat_id: !secret telegram_home_chat_id
 

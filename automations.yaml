@@ -1,1 +1,18 @@
-[]
+- alias: Ryan home
+  trigger:
+    platform: state
+    entity_id: device_tracker.ryan_cell
+    to: 'home'
+  action:
+    service: notify.Telegram
+    data:
+      message: 'Ryan is now home!'
+- alias: Ryan Left Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.ryan_cell
+    to: 'not_home'
+  action:
+    service: notify.Telegram
+    data:
+      message: 'Ryan left home!'
