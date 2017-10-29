@@ -67,8 +67,25 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
+# Entry for tracking devices
 device_tracker:
   - platform: netgear
     host: 192.168.1.1
     username: !secret netgear_user
     password: !secret netgear_pwd
+    track_new_devices: yes
+
+# Entry for the Telegram Bot
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api
+    allowed_chat_ids:
+      - !secret telegram_home_chat_id
+
+# Example configuration.yaml entry for the notifier
+notify:
+  - name: Telegram_notfier
+    platform: telegram
+    chat_id: !secret telegram_home_chat_id
+
+
