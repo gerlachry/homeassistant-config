@@ -4,7 +4,7 @@
     entity_id: device_tracker.ryan_cell
     to: 'home'
   action:
-    service: notify.telegram_erica
+    service: notify.telegram_wife
     data:
       message: 'Ryan is now home!'
 
@@ -14,7 +14,7 @@
     entity_id: device_tracker.ryan_cell
     to: 'not_home'
   action:
-    service: notify.telegram_erica
+    service: notify.telegram_wife
     data:
       message: 'Ryan left home!'
 
